@@ -8,7 +8,8 @@ AllowTcpForwarding no
 AllowAgentForwarding no
 PermitTunnel no
 
-# Force sftp and chroot jail
+# force sftp and chroot jail
 Subsystem sftp internal-sftp
 ForceCommand internal-sftp
-ChrootDirectory %h
+ChrootDirectory /home
+
