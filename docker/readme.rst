@@ -31,11 +31,12 @@ Usage
 
 where SFTP_USER and SFTP_PASSWORD are the username and password for SFTP connection.
 
-The SFTP server will be accessible for this single user, with writable sub-directory: ``/home/myusername/``.
+The SFTP server will be accessible for this single user, with writable sub-directory: ``/home/myusername/``,
+on port ``1022``.
 It is possible to create multiple users with connecting to the container (``docker exec ... /bin/sh``) and
 creating users manually.
 
-The UID of the ``myusername`` will be 100, belonging to group ``sftp`` with GID ``101``.
+The UID of the ``SFTP_USER`` will be 100, belonging to group ``sftp`` with GID ``101``.
 These ids might be needed when mounting volumes (see below).
 
 Security
@@ -44,6 +45,8 @@ Security
 SFTP provides secure transfers with password authentication and data transfer encryption (on top of SSH).
 User connections are chrooted to directory ``/home``; only subdirectory ``/home/SFTP_USER`` is writable.
 Interaction restricted to sftp (no SSH commands).
+
+Always use and update SFTP_USER and SFTP_PASSWORD parameters prior to running the container.
 
 Test:
 
@@ -98,7 +101,7 @@ The container might use the following volume mounts.
      - Volume mount
      - Comment
    * - *SFTP directory*    
-     - -v $PWD/sftp_directory_on_host:/home/$SFTP_USER  
+     - ``-v $PWD/sftp_directory_on_host:/home/$SFTP_USER``  
      - SFTP data of user in container directory ``/home/$SFTP_USER`` will be persisted in host directory ``sftp_directory_on_host``.
 
 References
