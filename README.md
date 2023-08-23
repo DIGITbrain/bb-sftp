@@ -4,7 +4,7 @@ Docker
 
 ## Image
 
-Based on Alpine linux official image on __Docker Hub__ [1]. 
+Based on Alpine linux official image on __Docker Hub__ [1].
 
 ## Licence
 
@@ -12,7 +12,7 @@ LGPL-2.1
 
 ## Version
 
-3.14.2 (Alpine)
+3.x (Alpine)
 
 ## Description
 
@@ -24,8 +24,8 @@ Base on description [2].
 
 ## Image build
 
-Note: change password for test user in Dockerfile 
- 
+Note: change password for test user in Dockerfile
+
 ```
 cd docker
 docker build -t sftp-image .

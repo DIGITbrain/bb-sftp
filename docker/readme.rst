@@ -9,7 +9,7 @@ About
 
 Version
 -------
-Based on the SSH service of **Alpine Linux** official image **version 3.15** available in Docker Hub [2]_.
+Based on the SSH service of **Alpine Linux** official image **version 3.x** available in Docker Hub [2]_.
 
 License
 -------
@@ -20,14 +20,14 @@ Pre-requisites
 
 * *docker* installed
 * access to DIGITbrain private docker repo (username, password) to pull the image:
-  
+
   - ``docker login dbs-container-repo.emgora.eu``
-  - ``docker pull dbs-container-repo.emgora.eu/sftp:3.15``
+  - ``docker pull dbs-container-repo.emgora.eu/sftp-alpine:3``
 
 Usage
 =====
 
-``docker run -d --rm --name sftp -e SFTP_USER=myusername -e SFTP_PASSWORD=mypassword -p 1022:22 sftp:3.15``
+``docker run -d --rm --name sftp -e SFTP_USER=myusername -e SFTP_PASSWORD=mypassword -p 1022:22 sftp-alpine:3``
 
 where SFTP_USER and SFTP_PASSWORD are the username and password for SFTP connection.
 
@@ -64,7 +64,7 @@ Configuration
 Parameters
 ----------
 
-.. list-table:: 
+.. list-table::
    :header-rows: 1
 
    * - Name
@@ -79,7 +79,7 @@ Parameters
 
 Ports
 -----
-.. list-table:: 
+.. list-table::
   :header-rows: 1
 
   * - Container port
@@ -94,14 +94,14 @@ Volumes
 
 The container might use the following volume mounts.
 
-.. list-table:: 
+.. list-table::
    :header-rows: 1
 
    * - Name
      - Volume mount
      - Comment
-   * - *SFTP directory*    
-     - ``-v $PWD/sftp_directory_on_host:/home/$SFTP_USER``  
+   * - *SFTP directory*
+     - ``-v $PWD/sftp_directory_on_host:/home/$SFTP_USER``
      - SFTP data of user in container directory ``/home/$SFTP_USER`` will be persisted in host directory ``sftp_directory_on_host``.
 
 References

@@ -1,8 +1,8 @@
-# docker build -t sftp:3.14.2 .
-# docker run -d --rm --name sftp -e SFTP_USER=db -e SFTP_PASSWORD=db -p 10000:22 -v $PWD/dir:/home/db sftp:3.15
+# docker build -t sftp:3 .
+# docker run -d --rm --name sftp -e SFTP_USER=db -e SFTP_PASSWORD=db -p 10000:22 -v $PWD/dir:/home/db sftp:3
 
 # Alpine base image
-FROM alpine:3.15
+FROM alpine:3
 
 # SFTP port
 EXPOSE 22
